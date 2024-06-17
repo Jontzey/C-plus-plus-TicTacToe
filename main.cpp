@@ -52,27 +52,27 @@ void play(){
     }
 
 
-    // visa text
+    // show text
     std:: cout << "Place your marker" << endl;
-    // läs spelarens input
+    // read player input
     std:: cin >> playerPlacement;
-    // om spelarens input är utanför range 0-8
+    // if player input is out of range 0-8
 
     while(playerPlacement < 0 || playerPlacement > 8){
         std:: cout << "The placement was out of range" << endl << "Try again" << endl;
         std:: cout << "Place your marker" << endl;
-        // läs spelarens input
+        // read player input
         std:: cin >> playerPlacement;
     }
 
-    // kolla om nuvarande plats är empty i board
+    // check if current placement is empty in the board
     if(board[playerPlacement] == " "){
         board[playerPlacement] = playerMarker;
     }else{
         while(true){
             std:: cout << "The placement was already taken" << endl << "Try again" << endl;
             std:: cout << "Place your marker" << endl;
-            // läs spelarens input
+            // read player input
             std:: cin >> playerPlacement;
             if(board[playerPlacement] == " "){
                 board[playerPlacement] = playerMarker;
@@ -80,7 +80,7 @@ void play(){
             }
         }
     }
-    // byt spelare
+    // change player
     if(player == 0){
         player = 1;
         playerMarker = "O";
